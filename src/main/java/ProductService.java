@@ -6,7 +6,7 @@ import main.java.ProductType;
 @Service
 public class ProductService {
 
-    public ProductDTO counter(Long id) {
+    public ProductDTO getData(Long id) {
         ProductDTO product = new ProductDTO(); //Pobieram dane produktu z bazy danych po id i wypelniam nimi productDTO
         product.setPrice(countPrice(product));
         product.incrementedCounter();
