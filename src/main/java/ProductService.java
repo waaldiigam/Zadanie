@@ -7,7 +7,8 @@ import main.java.ProductType;
 public class ProductService {
 
     public ProductDTO getData(Long id) {
-        ProductDTO product = new ProductDTO(); //Pobieram dane produktu z bazy danych po id i wypelniam nimi productDTO
+        ProductDTO product = new ProductDTO(); 
+        //Pobieram dane produktu z bazy danych po id i wypelniam nimi productDTO
         product.setPrice(countPrice(product));
         product.incrementedCounter();
         // Tworze metode ktora aktualizuje zmienna counter w bazie danych.
@@ -16,9 +17,9 @@ public class ProductService {
 
     public float countPrice(ProductDTO product) {
         float price = product.getPrice();
-        ProductType sex = product.getType();
+        ProductType kind = product.getType();
 
-        if (sex.equals(ProductType.KID)) {
+        if (kind.equals(ProductType.KID)) {
             return (float) 0.9 * price;
         } else {
             return (float) 0.95 * price;
