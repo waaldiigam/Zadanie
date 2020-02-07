@@ -13,10 +13,8 @@ public class ProductEndpoint {
     @Autowired
     ProductService productService;
 
-    @GetMapping("/{id}")
+    @GetMapping("product/{id}")
     public ResponseEntity<ProductDTO> getProduct(@PathVariable Long id) throws Exception {
-        return new ResponseEntity<ProductDTO>(productService.counter(id), HttpStatus.OK);
+        return new ResponseEntity<ProductDTO>(productService.getData(id), HttpStatus.OK);
     }
 }
-
-// longbock  <-- Biblioteka do nauki
